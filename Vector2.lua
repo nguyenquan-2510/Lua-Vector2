@@ -1,0 +1,46 @@
+--[[
+
+@author: Nguyen Quan ( nqzz )
+@date:   2020-08-12 16:28:28
+@description: Vector2 class for 2D vector operations
+@version: 1.0.0
+
+--]]
+
+local Vector2 = {}
+Vector2.__index = Vector2
+
+function Vector2:new(x, y)
+    local new_vector2 = {}
+    new_vector2.x = x or 0
+    new_vector2.y = y or 0
+    setmetatable(new_vector2, self)
+    return new_vector2
+end
+
+function Vector2.__add(a, b)
+    return Vector2:new(a.x + b.x, a.y + b.y)
+end
+
+function Vector2.__sub(a, b)
+    return Vector2:new(a.x - b.x, a.y - b.y)
+end
+
+function Vector2.__mul(a, b)
+    if type(a) == "number" and type(b) == "table" then
+        a, b = b, a
+    end
+    if type(b) == "number"  and type(a) == "table" then
+        return Vector2:new(a.x * b, a.y * b)
+    elseif type(a) == "table" and type(b) == "table" then
+        return a.x * b.x + a.y * b.y
+    else
+        error("Invalid arguments ! Pls check again", 2)
+    end
+end
+
+function Vector2:__tostring()
+    return "(" .. tostring(self.x) .. ", " .. tostring(self.y) .. ")"
+end
+
+return Vector2

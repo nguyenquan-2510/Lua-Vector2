@@ -1,3 +1,5 @@
+-- Ye u can take a look at this demo file to see how to use the Vector2 library
+
 local Vector2 = require("Vector2")
 
 local v1 = Vector2:new(3, 4)

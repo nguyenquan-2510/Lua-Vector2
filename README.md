@@ -1,4 +1,4 @@
-# Vector2 Data Type writen in Lua
+# Vector2 Data Type written in Lua
 
 As y'all know that Lua just have table as its only data structure
 So I created it. To be more specific, recreated it. I think this has been created be4

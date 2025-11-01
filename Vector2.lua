@@ -3,7 +3,7 @@
 @author: Nguyen Quan ( nqzz )
 @date:   2020-08-12 16:28:28
 @description: Vector2 class for 2D vector operations
-@version: 1.0.0
+@version: 1.0.1
 
 --]]
 

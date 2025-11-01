@@ -13,4 +13,4 @@ So when use type() -> return "table"
 
 Version 1.0.0: + - * /
 
-Version 1.0.1: (Not available yet)
+Version 1.0.1: Display error when calling a vector as a function

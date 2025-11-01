@@ -8,6 +8,9 @@ or perfrom dot product of two vectors ( tích vô hướng cho dễ hiểu )
 
 More features will be updated ( if I was not lazy xD )
 
+Basically it is just a table but have advanced configs for vector operations
+So when use type() -> return "table"
+
 Version 1.0.0: + - * /
 
 Version 1.0.1: (Not available yet)

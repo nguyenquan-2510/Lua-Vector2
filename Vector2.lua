@@ -3,7 +3,7 @@
 @author: Nguyen Quan ( nqzz )
 @date:   2020-08-12 16:28:28
 @description: Vector2 class for 2D vector operations
-@version: 1.0.1
+@version: 1.0.2
 
 --]]
 
@@ -39,24 +39,35 @@ function Vector2.__mul(a, b)
     end
 end
 
+function Vector2:__len()
+    return math.sqrt(self.x * self.x + self.y * self.y)
+end
+-- Note: This just work if you have lua 5.2+
+-- For me, im using luajit (https://luajit.org/) based on lua 5.1 which does
+-- not support __len metamethod for table
+
+function Vector2:getLength()
+    return math.sqrt(self.x * self.x + self.y * self.y)
+end
+
 function Vector2.__eq(a, b)
     return a.x == b.x and a.y == b.y
 end
 
 function Vector2.__lt(a, b)
-    return (a.x^2 + a.y^2) < (b.x^2 + b.y^2)
+    return Vector2.getLength(a) < Vector2.getLength(b)
 end
 
 function Vector2.__le(a, b)
-    return (a.x^2 + a.y^2) <= (b.x^2 + b.y^2)
+    return Vector2.getLength(a) <= Vector2.getLength(b)
 end
 
 function Vector2.__gt(a, b)
-    return (a.x^2 + a.y^2) > (b.x^2 + b.y^2)
+    return Vector2.getLength(a) > Vector2.getLength(b)
 end
 
 function Vector2.__ge(a, b)
-    return (a.x^2 + a.y^2) >= (b.x^2 + b.y^2)
+    return Vector2.getLength(a) >= Vector2.getLength(b)
 end
 
 function Vector2:__tostring()
@@ -65,17 +76,6 @@ end
 
 function Vector2:__call()
     error("Unable to call Vector2 " .. tostring(self) .. "! Not a function")
-end
-
-function Vector2:__len()
-    return math.sqrt(self.x * self.x + self.y * self.y)
-end
--- Note: This just work if you have lua 5.2+
--- For me, im using luajit (https://luajit.org/) which is compatible
--- with lua 5.1 but not support __len metamethod for table
-
-function Vector2:getLength()
-    return math.sqrt(self.x * self.x + self.y * self.y)
 end
 
 return Vector2

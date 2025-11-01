@@ -2,10 +2,13 @@
 
 local Vector2 = require("Vector2")
 
+print("Output will be redirected to out.txt file")
+print("Version: ", _VERSION)
+
 io.input("inp.txt")
 io.output("out.txt")
 
--- Vector2 instances
+-- Vector2
 local v1 = Vector2:new(3, 4)
 local v2 = Vector2:new(1, 2)
 
@@ -27,5 +30,3 @@ io.write("v1 > v2 ", tostring(v1 > v2), "\n")
 io.write("v1 >= v2 ", tostring(v1 >= v2), "\n")
 io.write("|v1| ", tostring(v1:getLength()), "\n")
 io.write("|v2| ", tostring(v2:getLength()), "\n")
-
-print(_VERSION)

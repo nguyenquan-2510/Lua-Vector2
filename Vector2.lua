@@ -35,7 +35,7 @@ function Vector2.__mul(a, b)
     elseif type(a) == "table" and type(b) == "table" then
         return a.x * b.x + a.y * b.y
     else
-        error("Invalid arguments ! Pls check again", 2)
+        error("Invalid arguments ! Pls check again")
     end
 end
 

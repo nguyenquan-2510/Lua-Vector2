@@ -43,4 +43,8 @@ function Vector2:__tostring()
     return "(" .. tostring(self.x) .. ", " .. tostring(self.y) .. ")"
 end
 
+function Vector2:__call()
+    error("Unable to call Vector2 " .. tostring(self) .. "! Not a function")
+end
+
 return Vector2
